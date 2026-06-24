@@ -1,0 +1,363 @@
+/* ==========================================================================
+   ULTRA-DARK ISOMETRIC 3D PRESENTATION GRID STYLES (ELECTRIC BLUE VARIANT)
+   ========================================================================== */
+:root {
+  --canvas-black: #08090c;
+  --panel-dark: #11141b;
+  --electric-blue: #00f0ff;
+  --deep-cyan: #0088cc;
+  --text-primary: #ffffff;
+  --text-muted: #748094;
+  --glow-intense: rgba(0, 240, 255, 0.25);
+  --glass-stroke: rgba(0, 240, 255, 0.08);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--canvas-black);
+  color: var(--text-primary);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.deck-container {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Background Structural Layout Guidelines */
+.grid-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, rgba(0, 240, 255, 0.03), transparent);
+  z-index: 0;
+}
+.line-1 { left: 25%; }
+.line-2 { left: 75%; }
+
+/* Minimalist Top Navigation Header */
+.tech-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 3rem auto;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 1rem;
+}
+
+.brand {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+}
+
+.header-nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.header-link {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  transition: all 0.3s ease;
+}
+
+.header-link:hover, .header-link.active {
+  color: var(--electric-blue);
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+}
+
+/* 3D High-Tilt Isometric Layering Stage Container */
+.deck-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  width: 100%;
+  max-width: 1050px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+  /* Recreates the dynamic asymmetrical rotated angle from the reference photo */
+  transform: rotateX(24deg) rotateY(-18deg) rotateZ(8deg);
+  transform-style: preserve-3d;
+  perspective: 1200px;
+}
+
+/* Structural Glass Template Cards Base Definition */
+.deck-card {
+  background: var(--panel-dark);
+  border: 1px solid var(--glass-stroke);
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 
+    -25px 30px 50px rgba(0, 0, 0, 0.65),
+    0 0 2px rgba(0, 240, 255, 0.1);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  transform-style: preserve-3d;
+}
+
+.deck-card:hover {
+  transform: translateZ(25px) translateY(-5px);
+  border-color: rgba(0, 240, 255, 0.3);
+}
+
+.card-inner {
+  padding: 3.5rem;
+}
+
+/* Specific Treatment Elements for Cards */
+.serial-tag {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.hero-heading {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -1px;
+}
+
+.highlight-blue {
+  color: var(--electric-blue);
+}
+
+.hero-subheading {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 1rem 0;
+}
+
+.hero-desc {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin: 0 0 3rem 0;
+}
+
+.meta-footer {
+  display: flex;
+  gap: 2rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 1.5rem;
+}
+
+/* Secondary Panels Information Content Elements */
+.panel-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 2rem 0;
+  letter-spacing: -0.5px;
+}
+
+.panel-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+}
+
+.highlights-box {
+  background: rgba(0, 240, 255, 0.02);
+  border: 1px solid rgba(0, 240, 255, 0.05);
+  border-radius: 8px;
+  padding: 1.75rem;
+}
+
+.sub-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--electric-blue);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.bullet-stack {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Reference Accurate Circular Data Rings Container Design */
+.rings-layout-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 2.5rem;
+}
+
+.ring-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.circular-progress {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  /* Creates progress stroke length dynamically mapped from variable input degrees */
+  background: conic-gradient(var(--electric-blue) var(--data-deg), rgba(255, 255, 255, 0.04) 0deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.05);
+}
+
+.circular-progress::before {
+  content: '';
+  position: absolute;
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  background: var(--panel-dark);
+}
+
+.inner-value {
+  position: relative;
+  z-index: 2;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.ring-label {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+}
+
+.ring-sub {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Horizontal Project & Node Rows Component Architecture */
+.project-deck-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.project-node {
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  padding: 1.7rem;
+}
+
+.node-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.node-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.node-pill {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--electric-blue);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  background: rgba(0, 240, 255, 0.05);
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+}
+
+.node-desc {
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Timeline Components */
+.education-deck-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.timeline-node-card {
+  border-left: 2px solid var(--electric-blue);
+  padding-left: 1.5rem;
+}
+
+.node-date {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--electric-blue);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.node-degree {
+  font-size: 1.2rem;
+  margin: 0 0 0.25rem 0;
+}
+
+.node-inst {
+  color: var(--text-muted);
+  margin: 0 0 0.75rem 0;
+  font-size: 0.95rem;
+}
+
+.node-metric-badge {
+  font-size: 0.8rem;
+  background: rgba(255,255,255,0.04);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  color: var(--text-primary);
+}
+
+/* Responsive Adaptive Flattening Stage overrides */
+@media (max-width: 968px) {
+  .deck-stage {
+    transform: none;
+    perspective: none;
+    gap: 2rem;
+  }
+  .card-inner {
+    padding: 2rem;
+  }
+  .hero-heading {
+    font-size: 2.2rem;
+  }
+}
